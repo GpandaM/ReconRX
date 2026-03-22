@@ -1,0 +1,27 @@
+# virtual env
+medbridge_venv/.
+medbridge_venv/
+venv/.
+
+# python cache
+__pycache__
+
+
+# IDE
+.vscode/
+.cursor/
+
+# heavy files
+data/input/discharge_8000.csv
+data/input/discharge_summary.parquet
+data/input/pharmacy_claims_simulated.csv
+
+# secrets
+.env
+
+# OS
+.DS_Store
+
+# test files
+test_agents.py
+test_ingestion.py

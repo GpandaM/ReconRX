@@ -1,0 +1,51 @@
+You are a medical information extraction specialist. Your task is to extract structured medication information from discharge summary text.
+
+## Input
+You will be given a section of text from a hospital discharge summary containing medications. The text may include:
+- Numbered medication lists
+- Medication names (generic or brand)
+- Dosages (e.g., "40 mg", "500mg")
+- Routes of administration (e.g., "PO" for oral, "IV" for intravenous)
+- Frequencies (e.g., "DAILY", "BID" for twice daily, "PRN" for as needed)
+- Special instructions
+- Redacted information marked with "___"
+
+## Task
+Extract ALL medications mentioned in the text and return them as a structured JSON list.
+
+For each medication, extract:
+1. **drug_name**: The medication name (generic or brand name as written)
+2. **dose**: The dose with unit (e.g., "40 mg", "500 mg")
+3. **route**: Route of administration (PO, IV, topical, etc.) - if mentioned
+4. **frequency**: How often to take (DAILY, BID, TID, QID, PRN, etc.) - if mentioned
+5. **instructions**: Any special instructions (e.g., "with food", "at bedtime")
+
+## Rules
+- Extract medications EXACTLY as written in the text
+- If information is missing or redacted (___), omit that field or use null
+- Do NOT infer or add information not present in the text
+- Include ALL medications mentioned, even if partially described
+- Preserve the original medication name (don't convert brand to generic or vice versa)
+- For dose, include the number and unit together (e.g., "40 mg" not just "40")
+- Do not add route or frequency in dose
+
+## Discharge Medications Section
+{med_section}
+
+## Output Format
+Return a JSON object with a "medications" array. Each medication should have:
+```json
+{{
+  "medications": [
+    {{
+      "drug_name": "string",
+      "dose": "string or null",
+      "route": "string or null",
+      "frequency": "string or null",
+      "instructions": "string or null"
+    }}
+  ]
+}}
+```
+
+Extract the medications now:

@@ -1,0 +1,83 @@
+subject_id,Date,NDC,RxNorm Code,Drug Name,Dose,Quantity,Dose Form,Case Type,Original Prescribed
+10048001,5/6/24,,,Albuterol Inhaler,2 PUFF IH Q6H:PRN Shortness of breath,30,Inhaler/Nebulizer,case 001: Exact Match,Albuterol Inhaler 2 PUFF IH Q6H:PRN Shortness of breath
+10048001,5/7/24,,,Rivaroxaban,15 mg PO BID,60,Tablet/Capsule,case 001: Exact Match,Rivaroxaban 15 mg PO BID
+10048001,5/6/24,,,aMILoride,10 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,aMILoride 10 mg PO DAILY
+10048001,5/6/24,,,Citalopram,20 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Citalopram 20 mg PO DAILY
+10048001,5/7/24,,,EPINEPHrine (EpiPEN),0.3 mg IM ONCE MR1 allergic reaction,1,Injection,case 001: Exact Match,EPINEPHrine (EpiPEN) 0.3 mg IM ONCE MR1 allergic reaction
+10048001,5/6/24,,,Furosemide,40 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Furosemide 40 mg PO DAILY
+10048001,5/6/24,,,Lactulose,30 mL PO Q8H:PRN As needed to have ___ Bowel,30,Oral Solution,case 001: Exact Match,Lactulose 30 mL PO Q8H:PRN As needed to have ___ Bowel
+10048001,5/6/24,,,Latanoprost,0.005% Ophth. Soln. 1 DROP BOTH EYES QHS,30,Oral Solution,case 001: Exact Match,Latanoprost 0.005% Ophth. Soln. 1 DROP BOTH EYES QHS
+10048001,5/7/24,,,Loratadine,10 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Loratadine 10 mg PO DAILY
+10048001,5/7/24,,,Magnesium Oxide,400 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Magnesium Oxide 400 mg PO DAILY
+10048001,5/7/24,,,Nadolol,20 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Nadolol 20 mg PO DAILY
+10048001,5/7/24,,,Pantoprazole,40 mg PO Q24H,30,Tablet/Capsule,case 001: Exact Match,Pantoprazole 40 mg PO Q24H
+10048001,5/7/24,,,rifAXIMin,550 mg PO BID,60,Tablet/Capsule,case 001: Exact Match,rifAXIMin 550 mg PO BID
+10048001,5/7/24,,,Sildenafil,50 mg PO DAILY:PRN sexual activity,30,Tablet/Capsule,case 001: Exact Match,Sildenafil 50 mg PO DAILY:PRN sexual activity
+10048001,5/7/24,,,Ursodiol,1000 mg PO BID,60,Tablet/Capsule,case 001: Exact Match,Ursodiol 600 mg PO BID
+10048001,5/18/24,,,Acyclovir,400 mg PO Q8H Duration: 5 Days,30,Tablet/Capsule,case 001: Exact Match,Acyclovir 400 mg PO Q8H Duration: 5 Days
+10048001,5/19/24,,,Enoxaparin Sodium,100 mg SC Q12H,30,Injection,case 001: Exact Match,Enoxaparin Sodium 100 mg SC Q12H
+10048001,5/19/24,,,Albuterol Inhaler,2 PUFF IH Q6H:PRN Shortness of breath,30,Inhaler/Nebulizer,case 001: Exact Match,Albuterol Inhaler 2 PUFF IH Q6H:PRN Shortness of breath
+10048001,5/19/24,,,aMILoride,10 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,aMILoride 10 mg PO DAILY
+10048001,5/19/24,,,Citalopram,20 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Citalopram 20 mg PO DAILY
+10048001,5/19/24,,,EPINEPHrine (EpiPEN),0.3 mg IM ONCE MR1 allergic reaction,1,Injection,case 001: Exact Match,EPINEPHrine (EpiPEN) 0.3 mg IM ONCE MR1 allergic reaction
+10048001,5/18/24,,,Furosemide,40 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Furosemide 40 mg PO DAILY
+10048001,5/19/24,,,Lactulose,30 mL PO Q8H:PRN As needed to have ___ Bowel,30,Oral Solution,case 001: Exact Match,Lactulose 30 mL PO Q8H:PRN As needed to have ___ Bowel
+10048001,5/19/24,,,Latanoprost,0.005% Ophth. Soln. 1 DROP BOTH EYES QHS,30,Oral Solution,case 001: Exact Match,Latanoprost 0.005% Ophth. Soln. 1 DROP BOTH EYES QHS
+10048001,5/18/24,,,Loratadine,10 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Loratadine 10 mg PO DAILY
+10048001,5/18/24,,,Magnesium Oxide,400 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Magnesium Oxide 400 mg PO DAILY
+10048001,5/19/24,,,Nadolol,20 mg PO DAILY,30,Injection,case 001: Similar Match,Nadolol 20 mg PO DAILY
+10048001,5/18/24,,,Sildenafil,50 mg PO DAILY:PRN sexual activity,30,Tablet/Capsule,case 001: Exact Match,Sildenafil 50 mg PO DAILY:PRN sexual activity
+10048001,5/18/24,,,Paracetamol,500 mg,30,Tablet/Capsule,case 001: New,
+10048001,5/19/24,,,Ursodiol,600 mg PO BID,60,Tablet/Capsule,case 001: Exact Match,Ursodiol 600 mg PO BID
+10048001,6/7/24,,,Acyclovir,400 mg PO Q8H,30,Tablet/Capsule,case 001: Exact Match,Acyclovir 400 mg PO Q8H
+10048001,6/7/24,,,Piperacillin-Tazobactam,4.5 g IV Q8H,30,Injection,case 001: Exact Match,Piperacillin-Tazobactam 4.5 g IV Q8H
+10048001,6/6/24,,,Albuterol Inhaler,2 PUFF IH Q6H:PRN Shortness of breath,30,Inhaler/Nebulizer,case 001: Exact Match,Albuterol Inhaler 2 PUFF IH Q6H:PRN Shortness of breath
+10048001,6/6/24,,,aMILoride,10 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,aMILoride 10 mg PO DAILY
+10048001,6/6/24,,,Citalopram,20 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Citalopram 20 mg PO DAILY
+10048001,6/7/24,,,Enoxaparin Sodium,100 mg SC Q12H,30,Injection,case 001: Exact Match,Enoxaparin Sodium 100 mg SC Q12H
+10048001,6/6/24,,,EPINEPHrine (EpiPEN),0.3 mg IM ONCE MR1 allergic reaction,1,Injection,case 001: Exact Match,EPINEPHrine (EpiPEN) 0.3 mg IM ONCE MR1 allergic reaction
+10048001,6/6/24,,,Furosemide,40 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Furosemide 40 mg PO DAILY
+10048001,6/7/24,,,Lactulose,30 mL PO Q8H:PRN As needed to have ___ Bowel,30,Oral Solution,case 001: Exact Match,Lactulose 30 mL PO Q8H:PRN As needed to have ___ Bowel
+10048001,6/7/24,,,Latanoprost,0.005% Ophth. Soln. 1 DROP BOTH EYES QHS,30,Oral Solution,case 001: Exact Match,Latanoprost 0.005% Ophth. Soln. 1 DROP BOTH EYES QHS
+10048001,6/7/24,,,Loratadine,10 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Loratadine 10 mg PO DAILY
+10048001,6/7/24,,,Magnesium Oxide,400 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Magnesium Oxide 400 mg PO DAILY
+10048001,6/7/24,,,Nadolol,20 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Nadolol 20 mg PO DAILY
+10048001,6/6/24,,,Pantoprazole,40 mg PO Q24H,30,Tablet/Capsule,case 001: Exact Match,Pantoprazole 40 mg PO Q24H
+10048001,6/6/24,,,Sildenafil,50 mg PO DAILY:PRN sexual activity,30,Tablet/Capsule,case 001: Exact Match,Sildenafil 50 mg PO DAILY:PRN sexual activity
+10048001,6/7/24,,,Ursodiol ER,600 mg PO BID,60,Tablet/Capsule,case 003: Similar Med,Ursodiol 600 mg PO BID
+10048001,6/7/24,,,HELD- Cefpodoxime Proxetil,200 mg PO Q12H  This medication,30,Tablet/Capsule,case 001: Exact Match,HELD- Cefpodoxime Proxetil 200 mg PO Q12H  This medication
+10048001,9/29/24,,,Daptomycin,600 mg IV Q24H,30,Injection,case 001: Exact Match,Daptomycin 600 mg IV Q24H
+10048001,9/28/24,,,aMILoride,5 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,aMILoride 5 mg PO DAILY
+10048001,9/28/24,,,Citalopram,20 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Citalopram 20 mg PO DAILY
+10048001,9/28/24,,,Enoxaparin Sodium,100 mg SC Q12H,30,Injection,case 001: Exact Match,Enoxaparin Sodium 100 mg SC Q12H
+10048001,9/29/24,,,Furosemide,40 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Furosemide 40 mg PO DAILY
+10048001,9/28/24,,,Lactulose,30 mL PO Q8H:PRN encephalopathy,30,Oral Solution,case 001: Exact Match,Lactulose 30 mL PO Q8H:PRN encephalopathy
+10048001,9/29/24,,,Latanoprost,0.005% Ophth. Soln. 1 DROP BOTH EYES QHS,30,Oral Solution,case 001: Exact Match,Latanoprost 0.005% Ophth. Soln. 1 DROP BOTH EYES QHS
+10048001,9/28/24,,,Magnesium Oxide,400 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Magnesium Oxide 400 mg PO DAILY
+10048001,9/28/24,,,Nadolol,20 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Nadolol 20 mg PO DAILY
+10048001,9/29/24,,,Pantoprazole,40 mg PO Q24H,30,Tablet/Capsule,case 001: Exact Match,Pantoprazole 40 mg PO Q24H
+10048001,9/28/24,,,Ursodiol,600 mg PO BID,60,Tablet/Capsule,case 001: Exact Match,Ursodiol 600 mg PO BID
+10048001,2/14/19,,,polyvinyl alcohol-povidone,1.4-0.6 % Dropperette Sig: ___,30,Drops,case 001: Exact Match,polyvinyl alcohol-povidone 1.4-0.6 % Dropperette Sig: ___
+10048001,2/14/19,,,acyclovir,400 mg Tablet Sig: One (1) Tablet PO Q8H (every 8,30,Tablet,case 001: Exact Match,acyclovir 400 mg Tablet Sig: One (1) Tablet PO Q8H (every 8
+10048001,2/13/19,,,ursodiol,300 mg Capsule Sig: Two (2) Capsule PO BID (2 times,60,Capsule,case 001: Exact Match,ursodiol 300 mg Capsule Sig: Two (2) Capsule PO BID (2 times
+10048001,2/13/19,,,metronidazole ER,500 mg Tablet Sig: One (1) Tablet PO Q8H (every,30,Tablet,case 003: Similar Med,metronidazole 500 mg Tablet Sig: One (1) Tablet PO Q8H (every
+10048001,2/13/19,,,ciprofloxacin ER,500 mg Tablet Sig: One (1) Tablet PO Q12H,30,Tablet,case 003: Similar Med,ciprofloxacin 500 mg Tablet Sig: One (1) Tablet PO Q12H
+10048001,2/13/19,,,spironolactone,100 mg Tablet Sig: One (1) Tablet PO DAILY,30,Tablet,case 001: Exact Match,spironolactone 100 mg Tablet Sig: One (1) Tablet PO DAILY
+10048001,2/14/19,,,furosemide,40 mg Tablet Sig: One (1) Tablet PO DAILY,30,Tablet,case 001: Exact Match,furosemide 40 mg Tablet Sig: One (1) Tablet PO DAILY
+10048001,2/14/19,,,docusate sodium,100 mg Capsule Sig: One (1) Capsule PO BID,60,Capsule,case 001: Exact Match,docusate sodium 100 mg Capsule Sig: One (1) Capsule PO BID
+10048001,5/3/21,,,Amiloride HCl,5 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Amiloride HCl 5 mg PO DAILY
+10048001,5/3/21,,,Furosemide,20 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Furosemide 20 mg PO DAILY
+10048001,5/4/21,,,Ursodiol,600 mg PO BID,60,Tablet/Capsule,case 001: Exact Match,Ursodiol 600 mg PO BID
+10048001,5/4/21,,,Acyclovir,400 mg PO Q8H Duration: 10 Days,30,Tablet/Capsule,case 001: Exact Match,Acyclovir 400 mg PO Q8H Duration: 10 Days
+10048001,4/19/24,,,Daptomycin,850 mg IV Q24H,30,Injection,case 001: Exact Match,Daptomycin 850 mg IV Q24H
+10048001,4/20/24,,,Lactulose,30 mL PO Q2H,30,Oral Solution,case 001: Exact Match,Lactulose 30 mL PO Q2H
+10048001,4/19/24,,,rifAXIMin,550 mg PO BID,60,Tablet/Capsule,case 001: Exact Match,rifAXIMin 550 mg PO BID
+10048001,4/19/24,,,aMILoride,10 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,aMILoride 10 mg PO DAILY
+10048001,4/20/24,,,Citalopram,20 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Citalopram 20 mg PO DAILY
+10048001,4/20/24,,,EPINEPHrine (EpiPEN),0.3 mg IM ONCE MR1 allergic reaction,1,Injection,case 001: Exact Match,EPINEPHrine (EpiPEN) 0.3 mg IM ONCE MR1 allergic reaction
+10048001,4/19/24,,,Furosemide,40 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Furosemide 40 mg PO DAILY
+10048001,4/19/24,,,Latanoprost,0.005% Ophth. Soln. 1 DROP BOTH EYES QHS,30,Oral Solution,case 001: Exact Match,Latanoprost 0.005% Ophth. Soln. 1 DROP BOTH EYES QHS
+10048001,4/20/24,,,Loratadine,10 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Loratadine 10 mg PO DAILY
+10048001,4/20/24,,,Magnesium Oxide,400 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Magnesium Oxide 400 mg PO DAILY
+10048001,4/20/24,,,Nadolol,20 mg PO DAILY,30,Tablet/Capsule,case 001: Exact Match,Nadolol 20 mg PO DAILY
+10048001,4/19/24,,,Pantoprazole,40 mg PO Q24H,30,Tablet/Capsule,case 001: Exact Match,Pantoprazole 40 mg PO Q24H
