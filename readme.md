@@ -50,100 +50,51 @@ The system is built to be provider-agnostic (Ollama today, any OpenAI-compatible
 
 ## System Architecture
 
-```
-┌──────────────────────────────────────────────────────────────────────────┐
-│                             DATA SOURCES                                 │
-│                                                                          │
-│   discharge_8000.csv          pharmacy_claims_simulated.csv              │
-│   (EHR discharge notes,       (Pharmacy fills, NDC/RxNorm codes,         │
-│    free-text + metadata)       dose, quantity, case type)                │
-└──────────────────┬───────────────────────────┬───────────────────────────┘
-                   │                           │
-                   ▼                           ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│                         INGESTION LAYER                                  │
-│                                                                          │
-│   CSVLoader (lazy-loaded pandas)       Normalizer                        │
-│   ├─ get_discharge_by_charttime()      ├─ parse_dose()                   │
-│   ├─ get_all_patient_discharges()      ├─ normalize_dose_form()          │
-│   ├─ get_fills_btw_dates()             ├─ normalize_pharmacy_record()    │
-│   └─ get_common_patient_ids()          └─ deduplicate_medications()      │
-└──────────────────┬───────────────────────────┬───────────────────────────┘
-                   │                           │
-        DischargeContext               List B (CanonicalMedication[])
-        (free-text note)               Pharmacy fills, 3-day window
-                   │                           │
-                   ▼                           │
-┌─────────────────────────────┐               │
-│      EXTRACTION AGENT       │               │
-│                             │               │
-│  1. Regex section parser    │               │
-│     (discharge med block)   │               │
-│  2. LLM call (JSON mode)    │               │
-│     prompt: extraction.txt  │               │
-│  3. Schema validation +     │               │
-│     dose/frequency parsing  │               │
-└──────────────┬──────────────┘               │
-               │                              │
-        List A (discharge meds)               │
-               │                              │
-               ▼                              ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│                       REDIS  (Long-Term Memory)                          │
-│                                                                          │
-│   patient:{id}:discharge_meds    ←  List A  (TTL: 90 days)              │
-│   patient:{id}:pharmacy_meds     ←  List B  (TTL: 90 days)              │
-│   patient:{id}:reported_meds     ←  List C  (external write)            │
-│   patient:{id}:discrepancies     ←  written by Reconciliation Agent     │
-└──────────────────────────┬───────────────────────────────────────────────┘
-                           │
-                           ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│                     RECONCILIATION AGENT  (deterministic)                │
-│                                                                          │
-│   compare_three_lists(list_a, list_b, list_c)                            │
-│                                                                          │
-│   Presence checks          Attribute checks        Temporal checks       │
-│   ├─ MISSING_IN_LIST_A     ├─ DOSE_VALUE_MISMATCH  └─ FILL_GAP          │
-│   ├─ MISSING_IN_LIST_B     ├─ DOSE_UNIT_MISMATCH      (> 7 days)        │
-│   └─ MISSING_IN_LIST_C     ├─ DOSE_FORM_MISMATCH                        │
-│                            ├─ ROUTE_MISMATCH                             │
-│                            ├─ QUANTITY_MISMATCH                          │
-│                            └─ FREQUENCY_MISMATCH                        │
-└──────────────────────────┬───────────────────────────────────────────────┘
-                           │
-                    List[Discrepancy]
-                           │
-                           ▼
-┌──────────────────────────────────────────────────────────────────────────┐
-│               CLINICAL REASONING AGENT  (ReAct + tool calling)           │
-│                                                                          │
-│   For each discrepancy → ReAct loop (max 5 iterations)                  │
-│                                                                          │
-│   Available tools:                                                       │
-│   ├─ query_drug_db()              drug risk class lookup                 │
-│   ├─ get_drug_risk_score()        numeric risk (1.0–3.0)                 │
-│   ├─ query_guidelines()           clinical guideline retrieval           │
-│   ├─ search_guidelines_by_drug()  drug-specific guidelines               │
-│   ├─ query_cohort()               historical outcomes by discrepancy     │
-│   ├─ get_similar_patient_outcomes() narrative outcome summary            │
-│   └─ submit_assessment()          ← terminal tool, captures final score  │
-│                                                                          │
-│   Urgency score (0–10):                                                  │
-│   drug_risk (0–3) + discrepancy_type (0–3) + time_factor (0–2)          │
-│   + patient_context (0–2)                                                │
-└──────────────────────────┬───────────────────────────────────────────────┘
-                           │
-                    List[UrgencyScore]
-                    (score, level, rationale, recommended_action)
-                           │
-                           ▼
-┌─────────────────────────────────┐
-│         SupervisorResult        │
-│  list_a · list_b · list_c       │
-│  discrepancies · urgency_scores │
-│  state · thread_id · timing     │
-└─────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    participant Trigger as Trigger (API / Celery Beat)
+    participant Sup as Supervisor
+    participant Extract as Extraction Agent
+    participant Recon as Reconciliation Agent
+    participant Clinical as Clinical Reasoning Agent
+    participant Mem as Memory Layer
+    participant Alert as Alert Output
+
+    Trigger->>Sup: process_patient(subject_id)
+    Sup->>Mem: load patient context (Long-Term Memory)
+    Mem-->>Sup: patient history, prior discrepancies
+
+    rect rgb(240, 240, 240)
+        Note over Sup,Extract: Phase 1 — Extract List A from discharge text
+        Sup->>Extract: extract_meds(discharge_text)
+        Extract->>Extract: LLM call with structured output schema
+        Extract-->>Sup: List A (structured medications)
+        Sup->>Mem: store List A in Long-Term Memory
+    end
+
+    rect rgb(235, 245, 255)
+        Note over Sup,Recon: Phase 2 — Reconcile Lists A, B, C
+        Sup->>Mem: load List B (pharmacy fills), List C (self-report)
+        Mem-->>Sup: List B, List C
+        Sup->>Recon: reconcile(List A, List B, List C)
+        Recon->>Recon: deterministic diff (10 check types)
+        Recon-->>Sup: discrepancy_report
+        Sup->>Mem: store discrepancies in Long-Term Memory
+    end
+
+    rect rgb(255, 245, 235)
+        Note over Sup,Clinical: Phase 3 — Clinical Reasoning (ReAct Loop)
+        Sup->>Clinical: assess(discrepancies, patient_context)
+        loop ReAct iterations (max 5)
+            Clinical->>Clinical: Think — what tool do I need?
+            Clinical->>Clinical: Act — call tool
+            Clinical->>Clinical: Observe — tool result
+        end
+        Clinical-->>Sup: urgency_scores + recommended_actions
+    end
+
+    Sup->>Mem: update urgency scores in Long-Term Memory
+    Sup->>Alert: emit alerts by severity
 ```
 
 ---
